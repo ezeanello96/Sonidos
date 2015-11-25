@@ -1,0 +1,27 @@
+<div data-role="page" style="color: white;">
+      <div data-role="header" style="background: #4B8A08;">
+			  <center><h1>Speech</h1></center>
+		  </div>
+      <div id="one">
+        <div class="ui-grid-a">
+      		<div class="ui-block-a" style="width: 48%;">
+        		<img class="fotoperfil ui-shadow" onclick="hacerSonido('Vaca')" src="img/vaca2.jpg"><br />
+            <h1>VACA</h1>
+					</div>
+      		<div class="ui-block-b" style="width: 48%;margin-left: 4%;">
+        		<img class="fotoperfil ui-shadow" onclick="hacerSonido('Burro')" src="img/burro.jpg"><br />
+            <h1>BURRO</h1>
+      		</div>
+    		</div>
+        <div class="ui-grid-a">
+      		<div class="ui-block-a" style="width: 48%;">
+        		<img class="fotoperfil ui-shadow" onclick="hacerSonido('Oveja')" src="img/oveja.jpg"><br />
+            <h1>OVEJA</h1>
+					</div>
+      		<div class="ui-block-b" style="width: 48%;margin-left: 4%;">
+        		<img class="fotoperfil ui-shadow" onclick="hacerSonido('Chancho')" src="img/chancho.jpg"><br />
+            <h1>CHANCHO</h1>
+      		</div>
+    		</div>
+      </div>
+    </div>

@@ -1,71 +1,112 @@
 <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
-        <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>II just another Css tabs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/prefixfree.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-skin-underline.css" />
+		<script type="text/javascript" src="js/responsivevoice.js"></script>
         <script type="text/javascript">
         function hacerSonido(texto){
-        	var msg = new SpeechSynthesisUtterance();
-            msg.text = texto;
-            msg.lang = 'es-AR';
-            window.speechSynthesis.speak(msg);
+        	responsiveVoice.speak(texto,"Spanish Latin American Female");
         }
-        </script>
-        <title>Sonidos</title>
-    </head>
-    <body background="img/pasto.jpg">
-    <div data-role="page" style="color: white;">
-      <div data-role="header" style="background: #4B8A08;">
-			  <center><h1>Speech</h1></center>
-		  </div>
-      <div id="one">
-        <div class="ui-grid-a">
-      		<div class="ui-block-a" style="width: 48%;">
-        		<img class="fotoperfil ui-shadow" onclick="hacerSonido('Hola mundo')" src="img/vaca2.jpg"><br />
-            <h1>VACA</h1>
-					</div>
-      		<div class="ui-block-b" style="width: 48%;margin-left: 4%;">
-        		<img class="fotoperfil ui-shadow" onclick="hacerSonido('Hola mundo')" src="img/burro.jpg"><br />
-            <h1>BURRO</h1>
-      		</div>
-    		</div>
-        <div class="ui-grid-a">
-      		<div class="ui-block-a" style="width: 48%;">
-        		<img class="fotoperfil ui-shadow" onclick="hacerSonido('Hola mundo')" src="img/oveja.jpg"><br />
-            <h1>OVEJA</h1>
-					</div>
-      		<div class="ui-block-b" style="width: 48%;margin-left: 4%;">
-        		<img class="fotoperfil ui-shadow" onclick="hacerSonido('Hola mundo')" src="img/chancho.jpg"><br />
-            <h1>CHANCHO</h1>
-      		</div>
-    		</div>
-      </div>
-    </div>
-    </body>
+    </script>
+  </head>
+
+  <body>
+	<header>
+		<h2 style="margin-top:10%;color:white;">Speach</h2>
+	</header>
+
+    <section>
+<input type="radio" id="profile" value="1" name="tractor" checked='checked' />    
+<input type="radio" id="settings" value="2" name="tractor" />      
+<input type="radio" id="posts" value="3" name="tractor" />
+  
+  <nav>   
+  <label for="profile" class='fontawesome-comment'></label>
+  <label style="margin-left:12%;" for="settings" class='fontawesome-check'></label>
+  <label style="float: right;" for="posts" class='fontawesome-bullhorn'></label>
+  </nav>
+  
+  <article class='uno'>
+    <h2>
+      ¿Qué animal es?</h2>
+      <p>Presiona para escuchar el nombre del animal</p>
+			<h2><div class="allado" style="margin-left: 15%;">Vaca</div>
+			<div class="allado" style="margin-left: 27%;">Chancho</div><br>
+			<img style="margin-left: 10%;" onclick="hacerSonido('Vaca')" alt=''  src='img/vaca.jpg' />
+			<img style="margin-left: 20%;" onclick="hacerSonido('Chancho')" alt=''  src='img/chancho.jpg' />
+     	<br><br>
+			<div class="allado" style="margin-left: 15%;">Oveja</div>
+			<div class="allado" style="margin-left: 30%;">Gallo</div><br>
+			<img style="margin-left: 10%;" onclick="hacerSonido('Oveja')" alt=''  src='img/oveja.jpg' />
+			<img style="margin-left: 20%;" onclick="hacerSonido('Gallo')" alt=''  src='img/gallo.png' />
+		</h2>
+  </article>
+  
+  <article class='dos'>
+    <p>Selecciona el nombre de los animales</p><br>
+		<img class="imgejercicio" alt='' src='img/vaca.jpg' />
+		<div class="select"style="margin-top:5% !important;"><select class="cs-select cs-skin-underline">
+			<option value="" disabled selected>---</option>
+			<option value="1">Vaca</option>
+			<option value="2">Chancho</option>
+			<option value="3">Oveja</option>
+			<option value="4">Gallo</option>
+		</select></div>
+		<img style="margin-top:37% !important;" class="imgejercicio" alt='' src='img/chancho.jpg' />
+		<div class="select" style="margin-top:20% !important;"><select class="cs-select cs-skin-underline">
+			<option value="" disabled selected>---</option>
+			<option value="1">Vaca</option>
+			<option value="2">Chancho</option>
+			<option value="3">Oveja</option>
+			<option value="4">Gallo</option>
+		</select></div>
+		<img style="margin-top:65% !important;" class="imgejercicio" alt='' src='img/oveja.jpg' />
+		<div class="select" style="margin-top:21% !important;"><select class="cs-select cs-skin-underline">
+			<option value="" disabled selected>---</option>
+			<option value="1">Vaca</option>
+			<option value="2">Chancho</option>
+			<option value="3">Oveja</option>
+			<option value="4">Gallo</option>
+		</select></div>
+		<img style="margin-top:100% !important;" class="imgejercicio" alt='' src='img/gallo.png' />
+		<div class="select" style="margin-top:23% !important;"><select class="cs-select cs-skin-underline">
+			<option value="" disabled selected>---</option>
+			<option value="1">Vaca</option>
+			<option value="2">Chancho</option>
+			<option value="3">Oveja</option>
+			<option value="4">Gallo</option>
+		</select></div>
+  </article>
+  
+  <article class='tres'>
+    <h2>
+      ¿Cómo hacen los animales?</h2>
+      <p>Presiona para escuchar el sonido del animal</p>
+			<h2><div class="allado" style="margin-left: 15%;">Vaca</div>
+			<div class="allado" style="margin-left: 27%;">Chancho</div><br>
+			<img style="margin-left: 10%;" onclick="hacerSonido('Vaca')" alt=''  src='img/vaca.jpg' />
+			<img style="margin-left: 20%;" onclick="hacerSonido('Chancho')" alt=''  src='img/chancho.jpg' />
+     	<br><br>
+			<div class="allado" style="margin-left: 15%;">Oveja</div>
+			<div class="allado" style="margin-left: 30%;">Gallo</div><br>
+			<img style="margin-left: 10%;" onclick="hacerSonido('Oveja')" alt=''  src='img/oveja.jpg' />
+			<img style="margin-left: 20%;" onclick="hacerSonido('Gallo')" alt=''  src='img/gallo.png' />
+		</h2>
+  </article>
+    <script src="js/index.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/selectFx.js"></script>
+		<script>
+			(function() {
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx(el);
+				} );
+			})();
+		</script>
+  </body>
 </html>
