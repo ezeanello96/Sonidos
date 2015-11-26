@@ -2,12 +2,13 @@
 div.cs-select {
 	display: inline-block;
 	vertical-align: middle;
-	position: relative;
+	position: absolute;
 	text-align: left;
 	background: #fff;
 	z-index: 100;
 	width: 100%;
 	margin-left: 23%;
+	margin-top: 3%;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;

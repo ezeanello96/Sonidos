@@ -8,16 +8,62 @@
 		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
 		<link rel="stylesheet" type="text/css" href="css/cs-skin-underline.css" />
 		<script type="text/javascript" src="js/responsivevoice.js"></script>
-        <script type="text/javascript">
-        function hacerSonido(texto){
-        	responsiveVoice.speak(texto,"Spanish Latin American Female");
-        }
+    <script type="text/javascript">
+      function hacerSonido(texto){
+        responsiveVoice.speak(texto,"Spanish Latin American Female");
+      }
+      var selectvaca = document.getElementById("vaca");
+      var opcionvaca = selectvaca.options[selectvaca.selectedIndex].value;
+			function alertopcionselec(){
+				var selectvaca = document.getElementById("vaca");
+      	var opcionvaca = selectvaca.options[selectvaca.selectedIndex].value;
+				alert(opcionvaca);
+			}
+			function verificarejercicio(){
+				var selectvaca = document.getElementById("vaca");
+      	var opcionvaca = selectvaca.options[selectvaca.selectedIndex].value;
+				var selectchancho = document.getElementById("chancho");
+      	var opcionchancho = selectchancho.options[selectchancho.selectedIndex].value;
+				var selectoveja = document.getElementById("oveja");
+      	var opcionoveja = selectoveja.options[selectoveja.selectedIndex].value;
+				var selectgallo = document.getElementById("gallo");
+      	var opciongallo = selectgallo.options[selectgallo.selectedIndex].value;
+				var correctas = 0;
+				var incorrectas = 4;
+				if(opcionvaca==1){
+					correctas = correctas+1;
+					incorrectas = incorrectas-1;
+					document.getElementById("vacacorrecta").style.visibility = "visible";
+					document.getElementById("vacaincorrecta").style.visibility = "hidden";
+				}else{
+					document.getElementById("vacaincorrecta").style.visibility = "visible";
+					document.getElementById("vacacorrecta").style.visibility = "hidden";
+				}
+				if(opcionchancho==2){
+					correctas = correctas+1;
+					incorrectas = incorrectas-1;				
+					document.getElementById("chanchocorrecta").style.visibility = "visible";
+				}else{document.getElementById("chanchoincorrecta").style.visibility = "visible";}
+				if(opcionoveja==3){
+					correctas = correctas+1;
+					incorrectas = incorrectas-1;
+					document.getElementById("ovejacorrecta").style.visibility = "visible";
+				}else{document.getElementById("ovejaincorrecta").style.visibility = "visible";}
+				if(opciongallo==4){
+					correctas = correctas+1;
+					incorrectas = incorrectas-1;
+					document.getElementById("gallocorrecta").style.visibility = "visible";
+				}else{document.getElementById("galloincorrecta").style.visibility = "visible";}
+				document.getElementById('correctas').innerHTML= correctas;
+				document.getElementById('incorrectas').innerHTML= incorrectas;
+				document.getElementById("textoresultados").style.visibility = "visible";
+			}
     </script>
   </head>
 
   <body>
 	<header>
-		<h2 style="margin-top:10%;color:white;">Speach</h2>
+		<h2 style="margin-top:10%;color:white;">Speech</h2>
 	</header>
 
     <section>
@@ -50,37 +96,40 @@
   <article class='dos'>
     <p>Selecciona el nombre de los animales</p><br>
 		<img class="imgejercicio" alt='' src='img/vaca.jpg' />
-		<div class="select"style="margin-top:5% !important;"><select class="cs-select cs-skin-underline">
+		<div class="select" style="margin-top:5% !important;"><select id="vaca" class="cs-select cs-skin-underline">
 			<option value="" disabled selected>---</option>
 			<option value="1">Vaca</option>
 			<option value="2">Chancho</option>
 			<option value="3">Oveja</option>
 			<option value="4">Gallo</option>
-		</select></div>
-		<img style="margin-top:37% !important;" class="imgejercicio" alt='' src='img/chancho.jpg' />
-		<div class="select" style="margin-top:20% !important;"><select class="cs-select cs-skin-underline">
+		</select></div><br><label style="margin-top:17%;color:green;visibility:hidden;" id="vacacorrecta">Correcto</label><label style="margin-top:17%;color:red;visibility:hidden;" id="vacaincorrecta">Inorrecto</label>
+		<img style="margin-top:47% !important;" class="imgejercicio" alt='' src='img/chancho.jpg' />
+		<div class="select" style="margin-top:20% !important;"><select id="chancho" class="cs-select cs-skin-underline">
 			<option value="" disabled selected>---</option>
 			<option value="1">Vaca</option>
 			<option value="2">Chancho</option>
 			<option value="3">Oveja</option>
 			<option value="4">Gallo</option>
-		</select></div>
-		<img style="margin-top:65% !important;" class="imgejercicio" alt='' src='img/oveja.jpg' />
-		<div class="select" style="margin-top:21% !important;"><select class="cs-select cs-skin-underline">
+		</select></div><br><label style="margin-top:17%;color:green;visibility:hidden;" id="chanchocorrecta">Correcto</label><label style="margin-top:17%;color:red;visibility:hidden;" id="chanchoincorrecta">Inorrecto</label>
+		<img style="margin-top:88% !important;" class="imgejercicio" alt='' src='img/oveja.jpg' />
+		<div class="select" style="margin-top:21% !important;"><select id="oveja" class="cs-select cs-skin-underline">
 			<option value="" disabled selected>---</option>
 			<option value="1">Vaca</option>
 			<option value="2">Chancho</option>
 			<option value="3">Oveja</option>
 			<option value="4">Gallo</option>
-		</select></div>
-		<img style="margin-top:100% !important;" class="imgejercicio" alt='' src='img/gallo.png' />
-		<div class="select" style="margin-top:23% !important;"><select class="cs-select cs-skin-underline">
+		</select></div><br><label style="margin-top:17%;color:green;visibility:hidden;" id="ovejacorrecta">Correcto</label><label style="margin-top:17%;color:red;visibility:hidden;" id="ovejaincorrecta">Inorrecto</label>
+		<img style="margin-top:140% !important;" class="imgejercicio" alt='' src='img/gallo.png' />
+		<div class="select" style="margin-top:23% !important;"><select id="gallo" class="cs-select cs-skin-underline">
 			<option value="" disabled selected>---</option>
 			<option value="1">Vaca</option>
 			<option value="2">Chancho</option>
 			<option value="3">Oveja</option>
 			<option value="4">Gallo</option>
-		</select></div>
+		</select></div><br><label style="margin-top:17%;color:green;visibility:hidden;" id="gallocorrecta">Correcto</label><label style="margin-top:17%;color:red;visibility:hidden;" id="galloincorrecta">Inorrecto</label>
+		<button class="botonverificar" onclick="verificarejercicio()">Verificar resultados</button>
+		<div id="textoresultados">Respuestas correctas:<div id="correctas"></div><br>Respuestas incorrectas:<div id="incorrectas"></div></div>
+		
   </article>
   
   <article class='tres'>

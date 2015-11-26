@@ -111,3 +111,20 @@ h1 {
         min-height: 100%;
 		
 }
+.tablist-left {
+    width: 25%;
+    display: inline-block;
+}
+.tablist-content {
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5%;
+}
+.botonverificar{
+		width: 100%;
+		position: absolute;
+		border-radius: 45% / 20%;
+    box-shadow: 0px 0px 15px #000;
+}
+
